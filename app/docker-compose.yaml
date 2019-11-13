@@ -1,7 +1,7 @@
 version: '3'
 services:
   flask:
-    image: my-flask
+    image: get-tweets-app
     volumes:
       - "./:/app"
     logging: 
@@ -9,7 +9,7 @@ services:
       options: 
         gelf-address: "tcp://0.0.0.0:12201"
   nginx:
-    image: my-nginx
+    image: get-tweets-nginx
     ports:
       - 5000:80
     depends_on:
