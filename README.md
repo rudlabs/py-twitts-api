@@ -24,26 +24,40 @@ ou se desejar derrubar todos de uma vez:
 $ docker ps -a | awk '{print $1}' | egrep -iv container | xargs docker rm -f
 ```
 
-# Endponts:
-Aplicação:
+# Endpionts:
+## Aplicação:
   `Home:` 'http://0.0.0.0:5000/'
-  `#apifirst:` 'http://0.0.0.0:5000/apifirst'
-  `#apigateway:` 'http://0.0.0.0:5000/apigateway'
-  `#cloudfirst:` 'http://0.0.0.0:5000/cloudfirst'
-  `#devops:` 'http://0.0.0.0:5000/devops'
-  `#microservices:` 'http://0.0.0.0:5000/microservices'
-  `#oauth:` 'http://0.0.0.0:5000/oauth'
-  `#openapis:` 'http://0.0.0.0:5000/openapis'
-  `#swagger:` 'http://0.0.0.0:5000/swagger'
-  `#raml:` 'http://0.0.0.0:5000/raml'})
 
-Logs:
+  `#apifirst:` 'http://0.0.0.0:5000/apifirst'
+
+  `#apigateway:` 'http://0.0.0.0:5000/apigateway'
+
+  `#cloudfirst:` 'http://0.0.0.0:5000/cloudfirst'
+
+  `#devops:` 'http://0.0.0.0:5000/devops'
+
+  `#microservices:` 'http://0.0.0.0:5000/microservices'
+
+  `#oauth:` 'http://0.0.0.0:5000/oauth'
+
+  `#openapis:` 'http://0.0.0.0:5000/openapis'
+
+  `#swagger:` 'http://0.0.0.0:5000/swagger'
+
+  `#raml:` 'http://0.0.0.0:5000/raml'
+
+## Logs:
   `Graylog:` 'http://0.0.0.0:9000'
 
-Monitoração:
+## Monitoração:
   `Prometheus:` 'http://0.0.0.0:9090'
+
   `Node Exporter:` 'http://0.0.0.0:9100'
+
   `Alertmanager:` 'http://0.0.0.0:9093'
+
   `CAdvisor:` 'http://0.0.0.0:8080'
+
   `Pushgateway:` 'http://0.0.0.0:9091'
+  
   `Grafana:` 'http://0.0.0.0:3000'
