@@ -46,3 +46,4 @@ Monitoração:
   `Alertmanager:` 'http://0.0.0.0:9093'
   `CAdvisor:` 'http://0.0.0.0:8080'
   `Pushgateway:` 'http://0.0.0.0:9091'
+  `Grafana:` 'http://0.0.0.0:3000'
