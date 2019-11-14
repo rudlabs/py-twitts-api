@@ -4,6 +4,9 @@ services:
 
   flask:
     image: get-tweets-app
+    build:
+      context: .
+      dockerfile: Dockerfile-app
     container_name: get-tweets-app
     volumes:
       - "./:/app"
@@ -14,6 +17,9 @@ services:
 
   nginx:
     image: get-tweets-nginx
+    build:
+      context: .
+      dockerfile: Dockerfile-nginx
     container_name: get-tweets-nginx
     ports:
       - 5000:80
