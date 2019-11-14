@@ -1,11 +1,15 @@
 # py-twitts-api
 Aplicação Web para obter o Tweets baseado em hashtag e criar uma lista dos usuários com mais seguidores.
 
+## Requisitos:
+	- Docker;
+	- JsonView (extenção de navegador);
+
 ## Aplicação, Logs e Monitoração:
 Atenção: 
   Para iniciar a aplicação é necesséario subir primeiro a stack de logs devido a dependência da aplicação!
 
-1) Dentro do diretório /logging, execute o comando abaixo do docker compose para iniciar a stack:
+1) Dentro do diretório /logging, execute o comando abaixo do docker compose para iniciar a stack em modo daemon:
 ```bash
 $ docker-compose up -d
 ```
@@ -59,5 +63,5 @@ $ docker ps -a | awk '{print $1}' | egrep -iv container | xargs docker rm -f
   `CAdvisor:` 'http://0.0.0.0:8080'
 
   `Pushgateway:` 'http://0.0.0.0:9091'
-  
+
   `Grafana:` 'http://0.0.0.0:3000'
