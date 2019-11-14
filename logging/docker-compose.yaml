@@ -1,0 +1,41 @@
+version: '2'
+
+services:
+
+  mongodb:
+    image: mongo:3
+  elasticsearch:
+    image: docker.elastic.co/elasticsearch/elasticsearch-oss:6.8.2
+    container_name: graylog-mongdb
+    environment:
+      - http.host=0.0.0.0
+      - transport.host=localhost
+      - network.host=0.0.0.0
+      - "ES_JAVA_OPTS=-Xms512m -Xmx512m"
+    ulimits:
+      memlock:
+        soft: -1
+        hard: -1
+    mem_limit: 1g
+
+  graylog:
+    image: graylog/graylog:3.1
+    container_name: graylog-server
+    environment:
+      - GRAYLOG_PASSWORD_SECRET=7Z6UBYShAgXSywjiewADar0rpG9QOUZwRGyC1leqW4ANUlgbUQ4VHeQ5xp0adAROfSfvCe4S2nkx7ST9xDUFjehJ4yLSIoZK
+      # Password for user admin
+      - GRAYLOG_ROOT_PASSWORD_SHA2=4bbdd5a829dba09d7a7ff4c1367be7d36a017b4267d728d31bd264f63debeaa6
+      - GRAYLOG_HTTP_EXTERNAL_URI=http://127.0.0.1:9000/
+    links:
+      - mongodb:mongo
+      - elasticsearch
+    depends_on:
+      - mongodb
+      - elasticsearch
+    ports:
+      # Graylog REST API
+      - 9000:9000
+      # GELF TCP
+      - 12201:12201
+      # GELF UDP
+      - 12201:12201/udp

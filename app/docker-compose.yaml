@@ -1,0 +1,25 @@
+version: '3'
+
+services:
+
+  flask:
+    image: get-tweets-app
+    container_name: get-tweets-app
+    volumes:
+      - "./:/app"
+    logging: 
+      driver: gelf
+      options: 
+        gelf-address: "tcp://0.0.0.0:12201"
+
+  nginx:
+    image: get-tweets-nginx
+    container_name: get-tweets-nginx
+    ports:
+      - 5000:80
+    depends_on:
+      - flask
+    logging: 
+      driver: gelf
+      options: 
+        gelf-address: "tcp://0.0.0.0:12201"
