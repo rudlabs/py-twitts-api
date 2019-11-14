@@ -1,5 +1,5 @@
 # py-twitts-api
-Aplicação Web para obter o Twitter baseado em hashtag e criar uma lista dos usuários com mais seguidores.
+Aplicação Web para obter o Tweets baseado em hashtag e criar uma lista dos usuários com mais seguidores.
 
 ## Aplicação, Logs e Monitoração:
 Atenção: 
