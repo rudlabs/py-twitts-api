@@ -7,10 +7,10 @@ import logging
 app = Flask(__name__)
 
 # Access Key and Token
-consumer_key = 'MRrZ7A56epXQp8ZEOeBpAwOHz'
-consumer_secret = '4vh8l5ylVFriebna5AUKcMcNlwhoblC3ux8iF6WyIAG0EGWqg8'
-access_token = '61522884-KoyXmgBrmG1Fn0UTO3nzjaxLxWs2ZBNBajzxVYiaa'
-access_token_secret = 'sB2t1MB7kOaG2pAKLR9WXtnq8xu5r1XXH09d4rwgTOGw9'
+consumer_key = ''
+consumer_secret = ''
+access_token = ''
+access_token_secret = ''
 
 # Authentication
 auth = tweepy.OAuthHandler(consumer_key, consumer_secret)
