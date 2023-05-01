@@ -1,4 +1,4 @@
 tweepy==3.8.0
-Flask==1.0.2
+Flask==2.3.2
 uWSGI==2.0.17.1
 pygelf==0.3.6
